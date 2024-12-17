@@ -1,0 +1,55 @@
+﻿@model IEnumerable<TasksController.Models.Task>
+@{
+    ViewBag.Title = "Task List";
+}
+
+<h2>Task List</h2>
+@if(Model.Count()==0)
+{
+    <p>No Task Available.</p>
+}
+else
+{
+    <table class="table table-striped">
+
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Parioraty</th>
+                <th>Is Completed</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+        <tbody>
+                @foreach(var task in Model)
+                {
+                    <tr>
+                        <td>@task.Title</td>
+                    
+                        <td>@task.Description</td>
+                    
+                        <td>@task.TaskPriority</td>
+                     
+                        <td>
+                            @if(task.IsCompleted)
+                            {
+                                <span class="badge progress-bar-success zoom">Completed</span>
+                            }
+                            else
+                            {
+                                <span class="badge progress-bar-danger blink">Not Completed</span>
+                            }
+
+                        </td>
+                  
+                        <td>@task.CreatedAt.ToString("g")</td>
+                       
+                    </tr>
+                }
+        </tbody>
+    </table>
+}
+<a href="@Url.Action("Create","Tasks")" class="btn btn-success">Create New Tasks</a>
+<a href="@Url.Action("CreatePer","Tasks")" class="btn btn-success">نوشتن برنامه ریزی جدید</a>
+

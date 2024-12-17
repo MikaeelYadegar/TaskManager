@@ -1,0 +1,75 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+@keyframes blink{
+    0%{
+        opacity:1;
+    }
+    50%{
+        opacity:0;
+    }
+    100%
+    {
+        opacity:1;
+    }
+}
+.blink{
+    animation:blink 1s infinite;
+}
+
+.zoom {
+  background-color: green;
+  transition: transform .2s; 
+}
+
+.zoom:hover {
+  transform: scale(1.5); 
+}
+.buttonCSS {
+  display: inline-block;
+}
+
+.buttonCSS span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonCSS span:after {
+  content: '\00bb';
+
+  transition: 0.5s;
+}
+
+.buttonCSS:hover span {
+ 
+}
+
+.buttonCSS:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.button {
+  transition-duration: 0.5s;
+  background-color:aquamarine
+}
+
+.button:hover {
+  background-color: #04AA6D; /* Green */
+  color: white;
+}
